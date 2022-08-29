@@ -12,11 +12,19 @@ namespace ToDoList
 {
     public partial class Display : Form
     {
+        private DataGridView _dgv;
+
+        public DataGridView dgv
+        {
+            get { return _dgv; }
+            set { _dgv = value; }   
+        }   
         public Display()
         {
             InitializeComponent();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Product.GetAllProducts();
+            dgv = dataGridView1;
+            dataGridView1.DataSource = ToD0List.GetAllProducts();
         }
     }
 }

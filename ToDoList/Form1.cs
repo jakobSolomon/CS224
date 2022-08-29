@@ -28,12 +28,15 @@ namespace ToDoList
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Product p = new Product()
+            ToD0List p = new ToD0List()
             {
                 name = textBox1.Text,
                 description = textBox2.Text,
-            }; 
+            };
             p.save();
+            Display d = new Display();
+            d.dgv.DataSource = ToD0List.GetAllProducts();
+            d.Show(); 
         }
     }
 }
